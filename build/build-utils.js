@@ -64,7 +64,8 @@ function latestPackageVersion(packageName) {
 }
 
 function quicktypeCoreDependency(packageName) {
-    return npmShow(packageName, "dependencies.quicktype-core");
+    // return "6.0.79";
+    return npmShow(packageName, "dependencies.@willh/quicktype-core");
 }
 
 function packageCommit(packageName, version) {
@@ -140,7 +141,7 @@ function withPackage(update, f) {
 }
 
 function setQuicktypeCore(pkg, version) {
-    pkg["dependencies"]["quicktype-core"] = version;
+    pkg["dependencies"]["@willh/quicktype-core"] = version;
 }
 
 function setCommit(pkg, commit) {
@@ -220,7 +221,7 @@ function copySources(buildDir, then) {
 
         try {
             copyFilesInDir(srcDir, "src", ".ts", content =>
-                replaceAll(content, '} from "../quicktype-core', '} from "quicktype-core')
+                replaceAll(content, '} from "../quicktype-core', '} from "@willh/quicktype-core')
             );
             copyFile(path.join(srcDir, "tsconfig.json"), "./");
             copyFile(path.join(srcDir, "../../../LICENSE"), "./");

@@ -19,7 +19,7 @@
         "outDir": "../../dist",
         "baseUrl": ".",
         "paths": {
-            "quicktype-core": [
+            "@willh/quicktype-core": [
                 "../@willh/quicktype-core"
             ]
         }

@@ -15,6 +15,11 @@ test/fixtures/java/target
 test/fixtures/java-lombok/target
 
 build/*/dist
+build/*/src
+build/*/LICENSE
+build/*/tsconfig.json
+build/*/package.json
+build/*/package-lock.json
 build/*/node_modules
 
 *.log
