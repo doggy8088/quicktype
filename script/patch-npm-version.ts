@@ -18,7 +18,7 @@ const PUBLISHED = (() => {
   return all[all.length - 1];
 })();
 
-const CURRENT = exec(`npm version`).match(/quicktype: '(.+)'/)[1];
+const CURRENT = exec(`npm version`).match(/'@willh\/quicktype': '(.+)'/)[1];
 
 switch (semver.compare(CURRENT, PUBLISHED)) {
   case -1:
