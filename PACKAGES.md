@@ -1,6 +1,6 @@
 # The packages
 
-* `quicktype-core`: This is the engine of quicktype. It takes JSON, JSON Schema, and GraphQL input and produces output in a variety of programming languages. We're trying to keep this lean in terms of download size so that it can be embedded, such as in [quicktype-playground](https://github.com/quicktype/quicktype-playground).
+* `quicktype-core`: This is the engine of quicktype. It takes JSON, JSON Schema, and GraphQL input and produces output in a variety of programming languages. We're trying to keep this lean in terms of download size so that it can be embedded, such as in [quicktype-playground](https://github.com/doggy8088/quicktype-playground).
 
 * `quicktype-typescript-input`: This is a bit of code that allows TypeScript code to be fed as input to `quicktype-core`, by transforming it to JSON Schema with [typescript-json-schema](https://github.com/YousefED/typescript-json-schema). It depends on `quicktype-core`.
 

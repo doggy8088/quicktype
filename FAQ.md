@@ -57,11 +57,11 @@ If you're unsure whether your JSON is valid, please use [JSONLint](https://jsonl
 
 ## I think I found a bug!
 
-Please [file an issue on GitHub](https://github.com/quicktype/quicktype/issues). Give as much context as you can so that we can reproduce it. Assume we know nothing about what you're trying to do (because we don't).
+Please [file an issue on GitHub](https://github.com/doggy8088/quicktype/issues). Give as much context as you can so that we can reproduce it. Assume we know nothing about what you're trying to do (because we don't).
 
 ## When will you support my favorite language?
 
-Please check whether there is [a pull request](https://github.com/quicktype/quicktype/pulls) that adds support for your language. If there is, please consider helping it along. If there isn't, please consider contributing one.
+Please check whether there is [a pull request](https://github.com/doggy8088/quicktype/pulls) that adds support for your language. If there is, please consider helping it along. If there isn't, please consider contributing one.
 
 ## Why do my types have weird names?
 
@@ -115,4 +115,4 @@ There are many ways you can support quicktype:
 
 -   Tell all your friends about it! Show it around, tweet about it, write a blog post, present it at a lightning talk.
 
--   quicktype is open source - please contribute! We need documentation at least as much as code, so you don't need strong coding skills to make an impact. If you do, we have [lots of open issues](https://github.com/quicktype/quicktype/issues) that need resolving, almost all of our target languages can be improved, and there are many, many programming languages that quicktype doesn't support yet. Talk to us [on Slack](http://slack.quicktype.io) if you're interested - we're always happy to help.
+-   quicktype is open source - please contribute! We need documentation at least as much as code, so you don't need strong coding skills to make an impact. If you do, we have [lots of open issues](https://github.com/doggy8088/quicktype/issues) that need resolving, almost all of our target languages can be improved, and there are many, many programming languages that quicktype doesn't support yet. Talk to us [on Slack](http://slack.quicktype.io) if you're interested - we're always happy to help.
