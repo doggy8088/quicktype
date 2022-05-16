@@ -639,7 +639,7 @@ export const systemtextjsonCSharpOptions = Object.assign({}, cSharpOptions, {
 
 export class SystemTextJsonCSharpTargetLanguage extends CSharpTargetLanguage {
     constructor() {
-        super("C# (System.Text.Json)", ["cs", "csharp"], "cs");
+        super("C# (System.Text.Json)", ["cs-stj", "csharp-stj"], "cs");
     }
 
     protected getOptions(): Option<any>[] {
