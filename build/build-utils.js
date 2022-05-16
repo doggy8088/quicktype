@@ -29,6 +29,8 @@ function run(cmd, args, returnOutput = false, returnStatus = false) {
     if (result.status !== 0) {
         console.log(`Command ${cmd} ${args.join(" ")} failed`);
         process.exit(1);
+        // Initial publish only
+        // return '"0.0.11"';
     }
     if (returnOutput) {
         const output = result.output[1].toString();
@@ -54,7 +56,10 @@ function npmShow(packageName, path) {
 }
 
 function latestPackageVersion(packageName) {
-    const versions = npmShow(packageName, "versions");
+    let versions = npmShow(packageName, "versions");
+    if (!Array.isArray(versions)) {
+        versions = [ versions ];
+    }
     return versions[versions.length - 1];
 }
 
@@ -98,7 +103,11 @@ function inDir(dir, f) {
     const originalDir = process.cwd();
     process.chdir(dir);
     try {
-        f(path.basename(dir));
+        var bname = path.basename(dir);
+        if (bname === 'quicktype-core' || bname === 'quicktype-graphql-input' || bname === 'quicktype-typescript-input') {
+            bname = '@willh/' + bname;
+        }
+        f(bname);
     } finally {
         process.chdir(originalDir);
     }
@@ -142,7 +151,7 @@ function setCommit(pkg, commit) {
 }
 
 function checkCore(packageName) {
-    if (packageName !== "quicktype-core") {
+    if (packageName.indexOf("quicktype-core") == -1) {
         throw new Error("buildCore can only build quicktype-core");
     }
 }
@@ -214,7 +223,7 @@ function copySources(buildDir, then) {
                 replaceAll(content, '} from "../quicktype-core', '} from "quicktype-core')
             );
             copyFile(path.join(srcDir, "tsconfig.json"), "./");
-            copyFile(path.join(srcDir, "../../LICENSE"), "./");
+            copyFile(path.join(srcDir, "../../../LICENSE"), "./");
 
             then(packageName);
         } catch (e) {
@@ -315,15 +324,15 @@ function publish(packageName, force, print, update) {
 
     const latestVersion = latestPackageVersion(packageName);
 
-    if (!force) {
-        const latestCommit = packageCommit(packageName, latestVersion);
-        const hasChangesToPackage = gitHasDiff(latestCommit, srcDir);
+    // if (!force) {
+    //     const latestCommit = packageCommit(packageName, latestVersion);
+    //     const hasChangesToPackage = gitHasDiff(latestCommit, srcDir);
 
-        if (!hasChangesToPackage) {
-            console.log("No changes since the last package - not publishing");
-            return;
-        }
-    }
+    //     if (!hasChangesToPackage) {
+    //         console.log("No changes since the last package - not publishing");
+    //         return;
+    //     }
+    // }
 
     const newVersion = versionToPublish(latestVersion);
     print(newVersion, commit);
@@ -333,7 +342,7 @@ function publish(packageName, force, print, update) {
         setCommit(pkg, commit);
         update(pkg);
     });
-    runNPM(["publish"]);
+    runNPM(["publish", "--access", "public"]);
 }
 
 function usage() {
