@@ -36,9 +36,9 @@ import {
     readableFromFileOrURL,
     readFromFileOrURL,
     FetchingJSONSchemaStore
-} from "../quicktype-core";
-import { schemaForTypeScriptSources } from "../quicktype-typescript-input";
-import { GraphQLInput } from "../quicktype-graphql-input";
+} from "../@willh/quicktype-core";
+import { schemaForTypeScriptSources } from "../@willh/quicktype-typescript-input";
+import { GraphQLInput } from "../@willh/quicktype-graphql-input";
 
 import { urlsFromURLGrammar } from "./URLGrammar";
 import { introspectServer } from "./GraphQLIntrospection";

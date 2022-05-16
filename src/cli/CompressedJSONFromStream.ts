@@ -1,5 +1,5 @@
 import { Readable } from "readable-stream";
-import { CompressedJSON, Value } from "../quicktype-core/input/CompressedJSON";
+import { CompressedJSON, Value } from "../@willh/quicktype-core/input/CompressedJSON";
 const { Parser } = require("stream-json");
 
 const methodMap: { [name: string]: string } = {
